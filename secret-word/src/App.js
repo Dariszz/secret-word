@@ -46,9 +46,6 @@ function App() {
 
   const startGame = () => {
     const { word, category } = pickWordAndCategory();
-    console.log(`Palavra: ${word}, Categoria: ${category}`);
-    
-
     setGameStage(stages[1].name);
   }
   const verifyLetter = (letter) => {
@@ -73,6 +70,7 @@ function App() {
         ...actualWrongLetters,
         normalizedLetter]);
       setGuesses((actualGuesses) => actualGuesses - 1);
+      setScore((actualScore) => actualScore - 50);
     }
   }
 
